@@ -7,17 +7,41 @@
 		"vscode": "^1.31.0"
 	},
 	"categories": [
-		"Other"
+		"Linters"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onLanguage:javascript",
+		"onLanguage:php",
+		"onLanguage:sql",
+		"onLanguage:typescript"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LewisSteele/vscode-sql-lint"
+	},
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"configuration": {
+			"type": "object",
+			"title": "PHP Mess Detector configuration",
+			"properties": {
+				"sql-lint.host": {
+					"type": "string",
+					"default": null,
+					"description": "MySQL database hostname"
+				},
+				"sql-lint.user": {
+					"type": "string",
+					"default": null,
+					"description": "MySQL database hostname"
+				},
+				"sql-lint.password": {
+					"type": "string",
+					"default": null,
+					"description": "MySQL database hostname"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
