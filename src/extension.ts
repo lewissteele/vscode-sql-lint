@@ -1,63 +1,61 @@
 import * as vscode from 'vscode';
 import { execSync } from 'child_process';
 
-const diagnosticCollectionName = 'sql-lint';
 let diagnosticCollection: vscode.DiagnosticCollection;
+let languageIds: any = {};
 
-function activate(context: vscode.ExtensionContext): void {
-	console.log('Congratulations, your extension "vscode-sql-lint" is now active!');
-
+export function activate(context: vscode.ExtensionContext): void {
 	const config = vscode.workspace.getConfiguration('sql-lint');
+  	diagnosticCollection = vscode.languages.createDiagnosticCollection('sql-lint');
+	context.subscriptions.push(diagnosticCollection);
 
-	// const selector: vscode.DocumentSelector = {
-	// 	scheme: 'file',
-	// 	language: 'sql',
-	// };
-
-  	diagnosticCollection = vscode.languages.createDiagnosticCollection(
-		diagnosticCollectionName
-	);
-  	context.subscriptions.push(diagnosticCollection);
+	vscode.workspace.onDidOpenTextDocument(event => {
+		const languageId = event.languageId;
+		const file = event.fileName;
+		languageIds[languageId] = file;
+		handle(file, languageId, config);
+	});
 
 	vscode.workspace.onDidChangeTextDocument(event => {
-		console.log('did get here');
+		const file = event.document.uri.fsPath;
+		const languageId = languageIds[file];
+		handle(file, languageId, config);
+	});
+}
 
-		// if (event.languageId === 'sql') {
-		const path = event.document.uri.fsPath;
+export function deactivate(): void { }
 
-		console.log('did get here 1');
+function handle(file: string, languageId: string, config: any) {
+	const errors = runLinter(file, config);
 
-		const errors = runLinter(path, config);
+	diagnosticCollection.clear();
 
-		diagnosticCollection.clear();
+	let diagnosticMap: Map<string, vscode.Diagnostic[]> = new Map();
 
-		let diagnosticMap: Map<string, vscode.Diagnostic[]> = new Map();
+	errors.forEach(error => {
+		let canonicalFile = vscode.Uri.file(error.file).toString();
+		let range = new vscode.Range(
+			error.line - 1,
+			error.startColumn,
+			error.line - 1,
+			error.endColumn,
+		);
+		let diagnostics = diagnosticMap.get(canonicalFile);
 
-		errors.forEach(error => {
-			let canonicalFile = vscode.Uri.file(error.file).toString();
-			let range = new vscode.Range(
-				error.line - 1,
-				error.startColumn,
-				error.line - 1,
-				error.endColumn,
-			);
-			let diagnostics = diagnosticMap.get(canonicalFile);
+		if (!diagnostics) {
+			diagnostics = []; 
+		}
 
-			if (!diagnostics) {
-				diagnostics = []; 
-			}
+		diagnostics.push(new vscode.Diagnostic(
+			range,
+			error.message,
+			vscode.DiagnosticSeverity.Error
+		));
+		diagnosticMap.set(canonicalFile, diagnostics);
+	});
 
-			diagnostics.push(new vscode.Diagnostic(
-				range,
-				error.message,
-				error.severity,
-			));
-			diagnosticMap.set(canonicalFile, diagnostics);
-		});
-
-		diagnosticMap.forEach((diags, file) => {
-			diagnosticCollection.set(vscode.Uri.parse(file), diags);
-		});
+	diagnosticMap.forEach((diags, file) => {
+		diagnosticCollection.set(vscode.Uri.parse(file), diags);
 	});
 }
 
@@ -73,11 +71,3 @@ function runLinter(file: string, config: any): Array<any> {
 		endColumn: 100,
 	}];
 }
-
-function onChange() {
-	console.log('onChange did get called!!!!!!!');
-}
-
-function deactivate(): void { }
-
-export { activate, deactivate };

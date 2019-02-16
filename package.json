@@ -20,6 +20,7 @@
 		"url": "https://github.com/LewisSteele/vscode-sql-lint"
 	},
 	"main": "./out/extension.js",
+	"icon": "images/mysql.png",
 	"contributes": {
 		"configuration": {
 			"type": "object",
