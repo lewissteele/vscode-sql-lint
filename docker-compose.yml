@@ -4,7 +4,9 @@ services:
     image: mysql
     environment:
       MYSQL_DATABASE: test
+      MYSQL_PASSWORD: test
       MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: test
     ports:
       - "3306:3306"
     volumes:
