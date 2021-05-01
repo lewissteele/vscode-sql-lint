@@ -14,12 +14,27 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "vscode-sql-lint.helloWorld",
-        "title": "Hello World"
+    "configuration": {
+      "type": "object",
+      "title": "sql-lint configuration",
+      "properties": {
+        "sql-lint.host": {
+          "type": "string",
+          "default": null,
+          "description": "MySQL database hostname"
+        },
+        "sql-lint.user": {
+          "type": "string",
+          "default": null,
+          "description": "MySQL database username"
+        },
+        "sql-lint.password": {
+          "type": "string",
+          "default": null,
+          "description": "MySQL database password"
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
