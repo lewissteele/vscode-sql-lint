@@ -7,10 +7,10 @@
     "vscode": "^1.55.0"
   },
   "categories": [
-    "Other"
+    "Linters"
   ],
   "activationEvents": [
-    "onCommand:vscode-sql-lint.helloWorld"
+    "onLanguage:sql"
   ],
   "main": "./out/extension.js",
   "contributes": {
