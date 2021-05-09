@@ -5,7 +5,7 @@ import * as vscode from 'vscode'
 const diagnosticCollection = vscode.languages.createDiagnosticCollection()
 const exec = promisify(cd.exec)
 
-export function activate (context: vscode.ExtensionContext): void {
+export function activate (): void {
   vscode.workspace.onDidChangeTextDocument(handleEvent)
   vscode.workspace.onDidOpenTextDocument(handleEvent)
 }
