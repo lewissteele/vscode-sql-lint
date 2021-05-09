@@ -9,4 +9,7 @@ parserOptions:
   sourceType: module
 plugins:
   - '@typescript-eslint'
-rules: {}
+rules:
+  comma-dangle:
+    - error
+    - always-multiline

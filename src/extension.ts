@@ -20,10 +20,10 @@ async function handleEvent (event: any): Promise<void> {
   const diagnostic = new vscode.Diagnostic(
     new vscode.Range(
       new vscode.Position(1, 1),
-      new vscode.Position(1, 1)
+      new vscode.Position(1, 1),
     ),
     'something is wrong',
-    vscode.DiagnosticSeverity.Error
+    vscode.DiagnosticSeverity.Error,
   )
 
   diagnosticCollection.set(vscode.Uri.parse(path), [diagnostic])
