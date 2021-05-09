@@ -317,7 +317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.22.1":
+"@typescript-eslint/parser@npm:^4.0.0, @typescript-eslint/parser@npm:^4.22.1":
   version: 4.22.1
   resolution: "@typescript-eslint/parser@npm:4.22.1"
   dependencies:
@@ -1464,7 +1464,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-standard@npm:^16.0.2":
+"eslint-config-standard-with-typescript@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "eslint-config-standard-with-typescript@npm:20.0.0"
+  dependencies:
+    "@typescript-eslint/parser": ^4.0.0
+    eslint-config-standard: ^16.0.0
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ">=4.0.1"
+    eslint: ">=7.12.1"
+    eslint-plugin-import: ">=2.22.1"
+    eslint-plugin-node: ">=11.1.0"
+    eslint-plugin-promise: ">=4.2.1"
+    typescript: ">=3.9"
+  checksum: d5f85efbb74f6ab09bd66ede24d6eea0bf3e54ec37dd3c8608fa66f78018faba1a16baa8e32c846ccd42de3282065c66384893c22e85948a415c0a226e3475fc
+  languageName: node
+  linkType: hard
+
+"eslint-config-standard@npm:^16.0.0, eslint-config-standard@npm:^16.0.2":
   version: 16.0.2
   resolution: "eslint-config-standard@npm:16.0.2"
   peerDependencies:
@@ -4360,6 +4377,7 @@ typescript@^4.1.3:
     "@yarnpkg/pnpify": ^3.0.0-rc.3
     eslint: ^7.26.0
     eslint-config-standard: ^16.0.2
+    eslint-config-standard-with-typescript: ^20.0.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-import: ^2.22.1
     eslint-plugin-node: ^11.1.0
