@@ -18,20 +18,25 @@
       "type": "object",
       "title": "sql-lint configuration",
       "properties": {
+        "sql-lint.driver": {
+          "type": "string",
+          "default": "mysql",
+          "description": "Database driver mysql|postgres"
+        },
         "sql-lint.host": {
           "type": "string",
           "default": null,
-          "description": "MySQL database hostname"
+          "description": "Database hostname"
         },
         "sql-lint.user": {
           "type": "string",
           "default": null,
-          "description": "MySQL database username"
+          "description": "Database username"
         },
         "sql-lint.password": {
           "type": "string",
           "default": null,
-          "description": "MySQL database password"
+          "description": "Database password"
         }
       }
     }
