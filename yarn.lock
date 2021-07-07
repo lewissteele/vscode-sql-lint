@@ -7118,9 +7118,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sql-lint@npm:^0.0.18":
-  version: 0.0.18
-  resolution: "sql-lint@npm:0.0.18"
+"sql-lint@npm:^0.0.19":
+  version: 0.0.19
+  resolution: "sql-lint@npm:0.0.19"
   dependencies:
     "@types/moo": ^0.5.3
     "@types/nearley": ^2.11.1
@@ -7136,7 +7136,7 @@ __metadata:
     sprintf-js: ^1.1.2
   bin:
     sql-lint: dist/src/cli.js
-  checksum: cb2f00b0e78658a7c14c969784e5d855c395cce50e37c2c03088c77290b7adf622258fb994c94a713718a16936d8c8d6c61038b133f05b0a579c08849d29c6cc
+  checksum: d8656b6b600ee2f2ff55473fbca0f8c32f110a211a4ab7ff4c89922bcbd901a8097ea1ffdfa0a6ef2c069ab3dd77b7303f85e76991fa8c0828fea708465855f9
   languageName: node
   linkType: hard
 
@@ -7910,7 +7910,7 @@ typescript@^4.1.3:
     glob: ^7.1.6
     jest: ^26.6.3
     mocha: ^8.2.1
-    sql-lint: ^0.0.18
+    sql-lint: ^0.0.19
     typescript: ^4.1.3
     vscode-test: ^1.5.0
   languageName: unknown

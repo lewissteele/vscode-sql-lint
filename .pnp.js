@@ -53,7 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.7"],
             ["jest", "npm:26.6.3"],
             ["mocha", "npm:8.4.0"],
-            ["sql-lint", "npm:0.0.18"],
+            ["sql-lint", "npm:0.0.19"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"],
             ["vscode-test", "npm:1.5.2"]
           ],
@@ -7145,16 +7145,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:de892317af592be1d7aef0251b6e8983854d9499cc43dfa95cd5672c5e5d0ae670574276b49ab8780f594c37ab1f8dc65bf96e0e957ed19c8731724716f8b4ca#npm:8.6.0", {
-          "packageLocation": "./.yarn/$$virtual/pg-virtual-61fd3781b2/0/cache/pg-npm-8.6.0-5a6707a5ba-06bec69854.zip/node_modules/pg/",
+        ["virtual:2677c1281da49005d7980a5a5cc06ed7cae337d07bda131b9b71861183e9e3dffe6dc2e0efb0256fdcd027ae00d32a5300b4373dc2bf01b47029f64f09d43888#npm:8.6.0", {
+          "packageLocation": "./.yarn/$$virtual/pg-virtual-ab52b4f6c2/0/cache/pg-npm-8.6.0-5a6707a5ba-06bec69854.zip/node_modules/pg/",
           "packageDependencies": [
-            ["pg", "virtual:de892317af592be1d7aef0251b6e8983854d9499cc43dfa95cd5672c5e5d0ae670574276b49ab8780f594c37ab1f8dc65bf96e0e957ed19c8731724716f8b4ca#npm:8.6.0"],
+            ["pg", "virtual:2677c1281da49005d7980a5a5cc06ed7cae337d07bda131b9b71861183e9e3dffe6dc2e0efb0256fdcd027ae00d32a5300b4373dc2bf01b47029f64f09d43888#npm:8.6.0"],
             ["@types/pg-native", null],
             ["buffer-writer", "npm:2.0.0"],
             ["packet-reader", "npm:1.0.0"],
             ["pg-connection-string", "npm:2.5.0"],
             ["pg-native", null],
-            ["pg-pool", "virtual:61fd3781b2005a62fa18a832917fce8deb7bb04c973e99466f8c7e4bf9aa5e9fa28bb77b54c3de405f16f446c6ab76a285c3a2e9b754c3f3579695f038016df5#npm:3.3.0"],
+            ["pg-pool", "virtual:ab52b4f6c22610270ce385002a0d28b1325a1ce01505dc8dc94d9c413c44393d33525e67d35a3b0bbc35a4334e5921d12df41a555ed98e7f426c51c3fee4e5a9#npm:3.3.0"],
             ["pg-protocol", "npm:1.5.0"],
             ["pg-types", "npm:2.2.0"],
             ["pgpass", "npm:1.0.4"]
@@ -7192,12 +7192,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:61fd3781b2005a62fa18a832917fce8deb7bb04c973e99466f8c7e4bf9aa5e9fa28bb77b54c3de405f16f446c6ab76a285c3a2e9b754c3f3579695f038016df5#npm:3.3.0", {
-          "packageLocation": "./.yarn/$$virtual/pg-pool-virtual-1043dac95a/0/cache/pg-pool-npm-3.3.0-ad591c0006-25f528a9b7.zip/node_modules/pg-pool/",
+        ["virtual:ab52b4f6c22610270ce385002a0d28b1325a1ce01505dc8dc94d9c413c44393d33525e67d35a3b0bbc35a4334e5921d12df41a555ed98e7f426c51c3fee4e5a9#npm:3.3.0", {
+          "packageLocation": "./.yarn/$$virtual/pg-pool-virtual-52927313f9/0/cache/pg-pool-npm-3.3.0-ad591c0006-25f528a9b7.zip/node_modules/pg-pool/",
           "packageDependencies": [
-            ["pg-pool", "virtual:61fd3781b2005a62fa18a832917fce8deb7bb04c973e99466f8c7e4bf9aa5e9fa28bb77b54c3de405f16f446c6ab76a285c3a2e9b754c3f3579695f038016df5#npm:3.3.0"],
+            ["pg-pool", "virtual:ab52b4f6c22610270ce385002a0d28b1325a1ce01505dc8dc94d9c413c44393d33525e67d35a3b0bbc35a4334e5921d12df41a555ed98e7f426c51c3fee4e5a9#npm:3.3.0"],
             ["@types/pg", null],
-            ["pg", "virtual:de892317af592be1d7aef0251b6e8983854d9499cc43dfa95cd5672c5e5d0ae670574276b49ab8780f594c37ab1f8dc65bf96e0e957ed19c8731724716f8b4ca#npm:8.6.0"]
+            ["pg", "virtual:2677c1281da49005d7980a5a5cc06ed7cae337d07bda131b9b71861183e9e3dffe6dc2e0efb0256fdcd027ae00d32a5300b4373dc2bf01b47029f64f09d43888#npm:8.6.0"]
           ],
           "packagePeers": [
             "@types/pg",
@@ -8366,10 +8366,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["sql-lint", [
-        ["npm:0.0.18", {
-          "packageLocation": "./.yarn/cache/sql-lint-npm-0.0.18-de892317af-cb2f00b0e7.zip/node_modules/sql-lint/",
+        ["npm:0.0.19", {
+          "packageLocation": "./.yarn/cache/sql-lint-npm-0.0.19-2677c1281d-d8656b6b60.zip/node_modules/sql-lint/",
           "packageDependencies": [
-            ["sql-lint", "npm:0.0.18"],
+            ["sql-lint", "npm:0.0.19"],
             ["@types/moo", "npm:0.5.4"],
             ["@types/nearley", "npm:2.11.1"],
             ["@types/node", "npm:14.14.44"],
@@ -8380,7 +8380,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mysql2", "npm:2.2.5"],
             ["nearley", "npm:2.20.1"],
             ["param-case", "npm:3.0.4"],
-            ["pg", "virtual:de892317af592be1d7aef0251b6e8983854d9499cc43dfa95cd5672c5e5d0ae670574276b49ab8780f594c37ab1f8dc65bf96e0e957ed19c8731724716f8b4ca#npm:8.6.0"],
+            ["pg", "virtual:2677c1281da49005d7980a5a5cc06ed7cae337d07bda131b9b71861183e9e3dffe6dc2e0efb0256fdcd027ae00d32a5300b4373dc2bf01b47029f64f09d43888#npm:8.6.0"],
             ["sprintf-js", "npm:1.1.2"]
           ],
           "linkType": "HARD",
@@ -9243,7 +9243,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.7"],
             ["jest", "npm:26.6.3"],
             ["mocha", "npm:8.4.0"],
-            ["sql-lint", "npm:0.0.18"],
+            ["sql-lint", "npm:0.0.19"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"],
             ["vscode-test", "npm:1.5.2"]
           ],
