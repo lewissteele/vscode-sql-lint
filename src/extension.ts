@@ -1,9 +1,5 @@
-import { promisify } from 'util'
-import * as cd from 'child_process'
 import * as vscode from 'vscode'
-
-const diagnosticCollection = vscode.languages.createDiagnosticCollection()
-const exec = promisify(cd.exec)
+import sqlLint from '../../sql-lint/dist/src/main'
 
 export function activate (): void {
   vscode.workspace.onDidChangeTextDocument(handleEvent)
@@ -12,29 +8,35 @@ export function activate (): void {
 
 export function deactivate (): void {}
 
+const collection = vscode.languages.createDiagnosticCollection()
+
 async function handleEvent (event: any): Promise<void> {
-  const path: string = event.document.uri.fsPath
+  collection.clear()
 
-  diagnosticCollection.clear()
+  const sql = event.document.getText()
+  const config = vscode.workspace.getConfiguration('sql-lint')
+  const { driver, host, password, user } = config
 
-  const diagnostic = new vscode.Diagnostic(
+  const errors = await sqlLint({
+    driver,
+    host,
+    password,
+    sql,
+    user,
+  })
+
+  const diagnostics = errors.map(err => new vscode.Diagnostic(
+    // sql-lint lines are not zero indexed
     new vscode.Range(
-      new vscode.Position(1, 1),
-      new vscode.Position(1, 1),
+      new vscode.Position(err.line - 1, 0),
+      new vscode.Position(err.line - 1, 200),
     ),
-    'something is wrong',
+    err.error,
     vscode.DiagnosticSeverity.Error,
+  ))
+
+  collection.set(
+    vscode.Uri.parse(event.document.uri.fsPath),
+    diagnostics,
   )
-
-  diagnosticCollection.set(vscode.Uri.parse(path), [diagnostic])
-
-  await lint(path)
-}
-
-async function lint (file: string): Promise<void> {
-  const cmd = `sql-lint --format=json --host=localhost --user=test --password=test ${file}`
-
-  const output = await exec(cmd)
-
-  console.log(output)
 }
