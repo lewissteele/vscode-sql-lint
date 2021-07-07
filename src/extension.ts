@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import sqlLint from '../../sql-lint/dist/src/main'
+import sqlLint from 'sql-lint'
 
 export function activate (): void {
   vscode.workspace.onDidChangeTextDocument(handleEvent)
