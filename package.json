@@ -56,7 +56,6 @@
     "@types/vscode": "^1.55.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
-    "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "eslint": "^7.26.0",
     "eslint-config-standard-with-typescript": "^20.0.0",
     "eslint-import-resolver-node": "^0.3.4",
