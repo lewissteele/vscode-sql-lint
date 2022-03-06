@@ -1,9 +1,9 @@
 {
   "name": "vscode-sql-lint",
   "displayName": "SQL Lint",
-  "description": "SQL Lint will do sanity checks on your queries as well as bring errors back from the DB. If you worry about forgetting WHEREs on a DELETE or borking your data with unexpected characters, then SQL Lint is for you.",
+  "description": "SQL Linter for Visual Studio Code",
   "publisher": "lewissteele",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.55.0"
   },
